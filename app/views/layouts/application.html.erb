@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BookStore</title>
+    <title>Amazon - books books books</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,8 @@
   </head>
 
   <body>
+  	<%= link_to("Home", root_path) %> | <%= link_to("Books", books_path) %> | <%= link_to("Authors", authors_path)%>  
+
     <%= yield %>
   </body>
 </html>

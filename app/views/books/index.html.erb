@@ -1,0 +1,31 @@
+<h1>Books</h1>
+
+<br/>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Img</th>
+      <th>Author</th>
+      <th>Rating</th>
+      <th>Views</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.title, book %></td>
+        <td><%= image_tag(book.img, size: "180x250", alt: "best book online, books cheap best book") %></td>
+        <td><%= book.author.name %></td>
+        <td>
+        	<% book.rating.times do %>
+						*
+      		<% end %>
+        </td>
+        <td><%= book.views %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
