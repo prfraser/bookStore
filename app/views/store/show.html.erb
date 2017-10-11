@@ -1,0 +1,14 @@
+<h1><%= @store.title %></h1>
+<p>Street: <%= @store.address %></p>
+<p>Suburb: <%= @store.city %></p>
+<p>Postcode: <%= @store.postcode %></p>
+<p>State: <%= @store.state %></p>
+<p>Country: <%= @store.country %></p>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyB2cgMhO1FdlgQR37SzzGhzAIRaK5fHaA0
+    &location=<%= @store.latitude %>,<%= @store.longitude %>" allowfullscreen>
+</iframe>
