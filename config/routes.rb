@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root "welcome#index"
   resources :authors
   resources :books
+  get '/stores', to: 'store#index'
+  resources :store, only: [:show]
 end

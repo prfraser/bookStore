@@ -1,0 +1,67 @@
+<h1>Stores</h1>
+
+<br/>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>Postcode</th>
+      <th>State</th>
+      <th>Country</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= link_to store.title, store %></td>
+        <td><%= store.address %></td>
+        <td><%= store.city %></td>
+        <td><%= store.postcode %></td>
+        <td><%= store.state %></td>
+        <td><%= store.country %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+
+<%= form_tag(stores_path, method: :get) do %>
+  <%= label_tag(:currentaddress, "Current Address:") %>
+  <%= text_field_tag(:currentaddress) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<p>eg. 120 Brunswick St, Fortitude Valley QLD 4006</p><br>
+
+<% if @store.present? %>
+
+<strong>Closest store to you:</strong>
+    <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>Postcode</th>
+      <th>State</th>
+      <th>Country</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= link_to @store.title, @store %></td>
+        <td><%= @store.address %></td>
+        <td><%= @store.city %></td>
+        <td><%= @store.postcode %></td>
+        <td><%= @store.state %></td>
+        <td><%= @store.country %></td>
+      </tr>
+  </tbody>
+</table>
+<% end %>
