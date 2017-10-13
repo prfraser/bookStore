@@ -25,6 +25,10 @@
       		<% end %>
         </td>
         <td><%= book.views %></td>
+        <td><%= link_to "favourite",   favourite_book_path(book, type: "favourite"), method: :put %> </td>
+        <td>
+          <%= link_to "unfavourite", favourite_book_path(book, type: "unfavourite"), method: :put %>
+        </td>
       </tr>
     <% end %>
   </tbody>

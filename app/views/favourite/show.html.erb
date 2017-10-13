@@ -1,0 +1,8 @@
+<h1>Favourites</h1>
+<% @favourites.each do |favourite| %>
+	<h2>Title: <%= favourite.book.title %></h2>
+	<%= image_tag(favourite.book.img, size: "180x250", alt: "best book online, books cheap best book") %>
+	<p>Author: <%= favourite.book.author.name %></p>
+	<p>Rating: <%= favourite.book.rating %></p>
+	<p>Views: <%= favourite.book.views %></p>
+<% end %>
